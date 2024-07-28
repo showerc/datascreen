@@ -18,6 +18,11 @@ export const routes = [
     path: '/b',
     component: () => import('@/views/pages/B/index.vue'),
     hidden: true
+  },
+  {
+    path: '/c',
+    component: () => import('@/views/pages/C/index.vue'),
+    hidden: true
   }
 ]
 
