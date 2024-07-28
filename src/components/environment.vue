@@ -87,6 +87,6 @@ export default {
 
 .num {
   width: 7vw;
-  height: 2vw;
+  height: 1.5vw;
 }
 </style>
