@@ -56,9 +56,10 @@
 import A1 from '@/views/pages/A/components/A1.vue'
 import A2 from '@/views/pages/A/components/A2.vue'
 import A3 from '@/views/pages/A/components/A3.vue'
-import A4 from '@/components/environment.vue'
+
 import A5 from '@/views/pages/A/components/A5.vue'
 import A6 from '@/views/pages/A/components/A6.vue'
+import A4 from '@/components/environment.vue'
 import A7 from '@/components/notice.vue'
 
 export default {
@@ -80,7 +81,7 @@ export default {
 
 <style lang="less">
 #dv-full-screen-container {
-  background-image: url('./img/bg.png');
+  background-image: url('~@/assets/img/bg.png');
   background-size: 100% 100%;
   box-shadow: 0 0 3px blue;
   display: flex;
