@@ -1,5 +1,5 @@
 <template>
-  <div id="data-view">
+  <div id="data-view" @click="$router.push('/b')">
     <dv-full-screen-container>
       <dv-border-box-11 title="模具工位">
         <div
@@ -75,6 +75,11 @@ export default {
   },
   data() {
     return {}
+  },
+  methods: {
+    onTitleClick() {
+      console.log(1)
+    }
   }
 }
 </script>

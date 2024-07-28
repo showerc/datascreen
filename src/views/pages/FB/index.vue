@@ -1,32 +1,31 @@
 <template>
-  <div id="data-view" @click="$router.push('/fa')">
+  <div id="data-view" @click="$router.push('/fc')">
     <dv-full-screen-container>
-      <dv-border-box-11 title="后处理工位">
+      <dv-border-box-11 title="T4看板 - 质量管理1">
         <div
           style="height:100%;display: flex;flex-direction: column;overflow: hidden;box-sizing: border-box;padding: 10px;padding-top:60px">
 
           <div class="main-container">
 
-            <div style="overflow: hidden;grid-column: 1 / span 1;grid-row: 1 / span 4;">
-              <E1/>
+            <div style="overflow: hidden;grid-column: 1 / span 2;grid-row: 1 / span 2;">
+              <FB1/>
             </div>
-            <div style="overflow: hidden;grid-column: 2 / span 1;grid-row: 1 / span 4;">
-              <E1/>
+            <div style="overflow: hidden;grid-column: 3 / span 2;grid-row: 1 / span 2;">
+              <FB2/>
             </div>
-            <div style="overflow: hidden;grid-column: 3 / span 1;grid-row: 1 / span 4;">
-              <E1/>
+            <div style="overflow: hidden;grid-column: 1 / span 2;grid-row: 3 / span 2;">
+              <FB3/>
             </div>
-            <div style="overflow: hidden;grid-column: 4 / span 1;grid-row: 1 / span 4;">
-              <E2/>
+            <div style="overflow: hidden;grid-column: 3 / span 2;grid-row: 3 / span 2;">
+              <FB4/>
             </div>
             <div style="overflow: hidden;grid-column: 1 / span 2;grid-row: 5 / span 2;">
-              <E3/>
+              <FB5/>
             </div>
             <div style="overflow: hidden;grid-column: 3 / span 2;grid-row: 5 / span 2;">
-              <E4/>
+              <FB6/>
             </div>
           </div>
-
         </div>
 
       </dv-border-box-11>
@@ -36,19 +35,22 @@
 </template>
 
 <script>
-
-import E1 from '@/views/pages/E/components/E1.vue'
-import E2 from '@/views/pages/E/components/E2.vue'
-import E3 from '@/views/pages/E/components/E3.vue'
-import E4 from '@/views/pages/E/components/E4.vue'
+import FB1 from '@/views/pages/FB/components/FB1.vue'
+import FB2 from '@/views/pages/FB/components/FB2.vue'
+import FB3 from '@/views/pages/FB/components/FB3.vue'
+import FB4 from '@/views/pages/FB/components/FB4.vue'
+import FB5 from '@/views/pages/FB/components/FB5.vue'
+import FB6 from '@/views/pages/FB/components/FB6.vue'
 
 export default {
-  name: 'E',
+  name: 'FB',
   components: {
-    E1,
-    E2,
-    E3,
-    E4
+    FB1,
+    FB2,
+    FB3,
+    FB4,
+    FB5,
+    FB6
 
   },
   data() {

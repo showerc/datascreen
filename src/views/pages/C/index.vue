@@ -1,5 +1,5 @@
 <template>
-  <div id="data-view">
+  <div id="data-view" @click="$router.push('/d')">
     <dv-full-screen-container>
       <dv-border-box-11 title="库房">
         <div

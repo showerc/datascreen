@@ -1,24 +1,25 @@
 <template>
-  <div id="data-view" @click="$router.push('/e')">
+  <div id="data-view" @click="$router.push('/fb')">
     <dv-full-screen-container>
-      <dv-border-box-11 title="打胶房">
+      <dv-border-box-11 title="T4看板 - 安全管理">
         <div
           style="height:100%;display: flex;flex-direction: column;overflow: hidden;box-sizing: border-box;padding: 10px;padding-top:60px">
 
           <div class="main-container">
 
-            <div style="overflow: hidden;grid-column: 1 / span 2;grid-row: 1 / span 3;">
-              <D1/>
+            <div style="overflow: hidden;grid-column: 1 / span 3;grid-row: 1 / span 2;">
+              <FA1/>
             </div>
-            <div style="overflow: hidden;grid-column: 1 / span 2;grid-row: 4 / span 3;">
-              <D2/>
+            <div style="overflow: hidden;grid-column: 4 / span 1;grid-row: 1 / span 2;">
+              <FA2/>
             </div>
-            <div style="overflow: hidden;grid-column: 3 / span 1;grid-row: 1 / span 3;">
-              <D3/>
+            <div style="overflow: hidden;grid-column: 1 / span 4;grid-row: 3 / span 2;">
+              <FA3/>
             </div>
-            <div style="overflow: hidden;grid-column: 3 / span 1;grid-row: 4 / span 3;">
-              <D4/>
+            <div style="overflow: hidden;grid-column: 1 / span 4;grid-row: 5 / span 2;">
+              <FA4/>
             </div>
+
           </div>
 
         </div>
@@ -30,24 +31,28 @@
 </template>
 
 <script>
-
-import D1 from '@/views/pages/D/components/D1.vue'
-import D2 from '@/views/pages/D/components/D2.vue'
-
-import D3 from '@/components/environment.vue'
-import D4 from '@/components/notice.vue'
+import FA1 from '@/views/pages/FA/components/FA1.vue'
+import FA2 from '@/views/pages/FA/components/FA2.vue'
+import FA3 from '@/views/pages/FA/components/FA3.vue'
+import FA4 from '@/views/pages/FA/components/FA4.vue'
 
 export default {
-  name: 'D',
+  name: 'FA',
   components: {
-    D1,
-    D2,
-    D3,
-    D4
+    FA1,
+    FA2,
+    FA3,
+    FA4
+
   },
   data() {
     return {}
   }
+  // mounted() {
+  //   setTimeout(() => {
+  //     this.$router.push('/fb')
+  //   }, 5000)
+  // }
 }
 </script>
 
@@ -68,7 +73,7 @@ export default {
 
   .main-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 定义三列，每列占1份空间 */
+    grid-template-columns: repeat(4, 1fr); /* 定义三列，每列占1份空间 */
     grid-template-rows: repeat(6, 1fr); /* 定义两行，每行占1份空间 */
     gap: 10px; /* 设置网格项之间的间距 */
     width: 100%; /* 设置容器的宽度 */

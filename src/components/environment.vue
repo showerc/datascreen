@@ -26,7 +26,7 @@
           <div class="text-box-desc">粉尘含量</div>
         </dv-border-box-13>
       </div>
-      <dv-decoration-5 style="width:300px;height:40px;" dur="2"/>
+      <dv-decoration-5 style="width:300px;height:40px;" :dur="2"/>
 
     </div>
   </dv-border-box-12>

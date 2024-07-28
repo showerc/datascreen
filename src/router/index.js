@@ -33,6 +33,21 @@ export const routes = [
     path: '/e',
     component: () => import('@/views/pages/E/index.vue'),
     hidden: true
+  },
+  {
+    path: '/fa',
+    component: () => import('@/views/pages/FA/index.vue'),
+    hidden: true
+  },
+  {
+    path: '/fb',
+    component: () => import('@/views/pages/FB/index.vue'),
+    hidden: true
+  },
+  {
+    path: '/fc',
+    component: () => import('@/views/pages/FC/index.vue'),
+    hidden: true
   }
 ]
 

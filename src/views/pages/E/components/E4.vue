@@ -51,12 +51,18 @@ export default {
           {
             name: '实际工时',
             data: [10, 5, 15, 16, 19, 5, 10, 14],
-            type: 'bar'
+            type: 'bar',
+            label: {
+              show: true
+            }
           },
           {
             name: '标准工时',
             data: [15, 19, 20, 17, 20, 4, 14, 17],
-            type: 'bar'
+            type: 'bar',
+            label: {
+              show: true
+            }
           }
         ]
       }
