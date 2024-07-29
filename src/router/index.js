@@ -48,6 +48,26 @@ export const routes = [
     path: '/fc',
     component: () => import('@/views/pages/FC/index.vue'),
     hidden: true
+  },
+  {
+    path: '/fd',
+    component: () => import('@/views/pages/FD/index.vue'),
+    hidden: true
+  },
+  {
+    path: '/fe',
+    component: () => import('@/views/pages/FE/index.vue'),
+    hidden: true
+  },
+  {
+    path: '/ff',
+    component: () => import('@/views/pages/FF/index.vue'),
+    hidden: true
+  },
+  {
+    path: '/fg',
+    component: () => import('@/views/pages/FG/index.vue'),
+    hidden: true
   }
 ]
 

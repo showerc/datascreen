@@ -1,23 +1,29 @@
 <template>
-  <div id="data-view" @click="$router.push('/fd')">
+  <div id="data-view" @click="$router.push('/ff')">
     <dv-full-screen-container>
-      <dv-border-box-11 title="T4看板 - 质量管理2">
+      <dv-border-box-11 title="T4看板 - 交付管理2">
         <div
           style="height:100%;display: flex;flex-direction: column;overflow: hidden;box-sizing: border-box;padding: 10px;padding-top:60px">
 
           <div class="main-container">
 
             <div style="overflow: hidden;grid-column: 1 / span 2;grid-row: 1 / span 2;">
-              <FC1/>
+              <FE1/>
             </div>
             <div style="overflow: hidden;grid-column: 3 / span 2;grid-row: 1 / span 2;">
-              <FC2/>
+              <FE2/>
             </div>
-            <div style="overflow: hidden;grid-column: 1 / span 3;grid-row: 3 / span 4;">
-              <FC3/>
+            <div style="overflow: hidden;grid-column: 1 / span 2;grid-row: 3 / span 2;">
+              <FE3/>
             </div>
-            <div style="overflow: hidden;grid-column: 4 / span 1;grid-row: 3 / span 4;">
-              <FC4/>
+            <div style="overflow: hidden;grid-column: 3 / span 2;grid-row: 3 / span 2;">
+              <FE4/>
+            </div>
+            <div style="overflow: hidden;grid-column: 1 / span 2;grid-row: 5 / span 2;">
+              <FE5/>
+            </div>
+            <div style="overflow: hidden;grid-column: 3 / span 2;grid-row: 5 / span 2;">
+              <FE6/>
             </div>
           </div>
         </div>
@@ -29,19 +35,22 @@
 </template>
 
 <script>
-import FC1 from '@/views/pages/FC/components/FC1.vue'
-import FC2 from '@/views/pages/FC/components/FC2.vue'
-import FC3 from '@/views/pages/FC/components/FC3.vue'
-import FC4 from '@/views/pages/FC/components/FC4.vue'
+import FE1 from '@/views/pages/FE/components/FE1.vue'
+import FE2 from '@/views/pages/FE/components/FE2.vue'
+import FE3 from '@/views/pages/FE/components/FE3.vue'
+import FE4 from '@/views/pages/FE/components/FE4.vue'
+import FE5 from '@/views/pages/FE/components/FE5.vue'
+import FE6 from '@/views/pages/FE/components/FE6.vue'
 
 export default {
-  name: 'FD',
+  name: 'FE',
   components: {
-    FC1,
-    FC2,
-    FC3,
-    FC4
-
+    FE1,
+    FE2,
+    FE3,
+    FE4,
+    FE5,
+    FE6
   },
   data() {
     return {}

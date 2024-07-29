@@ -1,23 +1,27 @@
 <template>
-  <div id="data-view" @click="$router.push('/fd')">
+  <div id="data-view" @click="$router.push('/')">
     <dv-full-screen-container>
-      <dv-border-box-11 title="T4看板 - 质量管理2">
+      <dv-border-box-11 title="T4看板 - 成本管理">
         <div
           style="height:100%;display: flex;flex-direction: column;overflow: hidden;box-sizing: border-box;padding: 10px;padding-top:60px">
 
           <div class="main-container">
 
             <div style="overflow: hidden;grid-column: 1 / span 2;grid-row: 1 / span 2;">
-              <FC1/>
+              <FG1/>
             </div>
             <div style="overflow: hidden;grid-column: 3 / span 2;grid-row: 1 / span 2;">
-              <FC2/>
+              <FG2/>
             </div>
-            <div style="overflow: hidden;grid-column: 1 / span 3;grid-row: 3 / span 4;">
-              <FC3/>
+            <div style="overflow: hidden;grid-column: 1 / span 2;grid-row: 3 / span 2;">
+              <FG3/>
             </div>
-            <div style="overflow: hidden;grid-column: 4 / span 1;grid-row: 3 / span 4;">
-              <FC4/>
+            <div style="overflow: hidden;grid-column: 3 / span 2;grid-row: 3 / span 2;">
+              <FG4/>
+            </div>
+            <div style="overflow: hidden;grid-column: 1 / span 2;grid-row: 5 / span 2;">
+            </div>
+            <div style="overflow: hidden;grid-column: 3 / span 2;grid-row: 5 / span 2;">
             </div>
           </div>
         </div>
@@ -29,19 +33,18 @@
 </template>
 
 <script>
-import FC1 from '@/views/pages/FC/components/FC1.vue'
-import FC2 from '@/views/pages/FC/components/FC2.vue'
-import FC3 from '@/views/pages/FC/components/FC3.vue'
-import FC4 from '@/views/pages/FC/components/FC4.vue'
+import FG1 from '@/views/pages/FG/components/FG1.vue'
+import FG2 from '@/views/pages/FG/components/FG2.vue'
+import FG3 from '@/views/pages/FG/components/FG3.vue'
+import FG4 from '@/views/pages/FG/components/FG4.vue'
 
 export default {
-  name: 'FD',
+  name: 'FG',
   components: {
-    FC1,
-    FC2,
-    FC3,
-    FC4
-
+    FG1,
+    FG2,
+    FG3,
+    FG4
   },
   data() {
     return {}
