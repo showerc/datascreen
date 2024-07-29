@@ -1,12 +1,12 @@
 <template>
   <dv-border-box-12>
     <div class=""
-         style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;display: flex;flex-direction: column;justify-content: space-between;position: relative;
+         style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;
          align-items: center;">
       <div class="module-title">质量情况</div>
       <div class="module-sub-title">缺陷总数: 50</div>
 
-      <dv-charts :option="option" style="width:90%;"/>
+      <dv-charts :option="option" style="width:120%;"/>
       <dv-decoration-2 style="width:80%;height:50px;position: absolute;bottom:0px;left:10%"/>
 
     </div>
@@ -39,10 +39,11 @@ export default {
               { name: '灌注气泡', value: 6 }
             ],
             insideLabel: {
-              show: true
+              show: true,
+              formatter: '{name} - {value}'
             },
             outsideLabel: {
-              show: true,
+              show: false,
               formatter: '{name} - {value}'
             }
           }

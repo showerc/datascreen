@@ -57,14 +57,7 @@ export default {
 }
 </script>
 
-<style lang="less">
-#dv-full-screen-container {
-  background-image: url('~@/assets/img/bg.png');
-  background-size: 100% 100%;
-  box-shadow: 0 0 3px blue;
-  display: flex;
-  flex-direction: column;
-}
+<style lang="less" scoped>
 
 #data-view {
   width: 100%;
@@ -81,17 +74,6 @@ export default {
     height: auto;
     flex: 1; /* 设置容器的高度 */
     overflow: hidden;
-  }
-}
-
-.tag {
-
-  color: #aaa;
-
-  &.active {
-    color: #fff;
-    background: rgba(255, 255, 255, .2);
-    border-radius: 2px;
   }
 }
 

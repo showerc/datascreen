@@ -25,6 +25,31 @@ export default {
   height: 100%;
 }
 
+#dv-full-screen-container {
+  background-image: url('~@/assets/img/bg.png');
+  background-size: 100% 100%;
+  box-shadow: 0 0 3px blue;
+  display: flex;
+  flex-direction: column;
+}
+
+#data-view {
+  width: 100%;
+  height: 100%;
+  background-color: #030409;
+  color: #fff;
+
+  .main-container {
+    display: grid;
+
+    gap: 10px; /* 设置网格项之间的间距 */
+    width: 100%; /* 设置容器的宽度 */
+    height: auto;
+    flex: 1; /* 设置容器的高度 */
+    overflow: hidden;
+  }
+}
+
 .module-title {
   font-size: 20px;
   color: #fff;
@@ -33,8 +58,18 @@ export default {
   line-height: 28px;
 }
 
+.module-title-sm {
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  padding-top: 15px;
+  line-height: 28px;
+}
+
 .module-sub-title {
   font-size: 16px;
+  padding-top: 20px;
+
   color: #999;
   line-height: 20px;
 }

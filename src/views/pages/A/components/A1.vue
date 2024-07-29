@@ -3,13 +3,18 @@
     <div class=""
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px">
       <div class="module-title" style="margin-bottom: 10px">生产状态</div>
+      <div
+        style="display: flex;flex-direction: column;justify-content: space-between;align-items: center;flex:1;padding-bottom: 25px">
+        <div>
+          <dv-border-box-2 class="text-box item">C1-B1080D</dv-border-box-2>
+          <dv-border-box-7 class="text-box item">铺层</dv-border-box-7>
+          <dv-border-box-8 class="text-box item">灌注</dv-border-box-8>
+          <dv-border-box-7 class="text-box item">合模</dv-border-box-7>
+          <dv-border-box-7 class="text-box item">后固化</dv-border-box-7>
+        </div>
+        <img src="../img/qrcode.png" style="width:7vw;object-fit: cover">
+      </div>
 
-      <dv-border-box-2 style="width:10vw;height:1.5vw" class="text-box">C1-B1080D</dv-border-box-2>
-      <dv-border-box-7 style="width:10vw;height:1.5vw" class="text-box">铺层</dv-border-box-7>
-      <dv-border-box-8 style="width:10vw;height:1.5vw" class="text-box">灌注</dv-border-box-8>
-      <dv-border-box-7 style="width:10vw;height:1.5vw" class="text-box">合模</dv-border-box-7>
-      <dv-border-box-7 style="width:10vw;height:1.5vw" class="text-box">后固化</dv-border-box-7>
-      <img src="../img/qrcode.png" style="width:5vw;object-fit: cover">
     </div>
   </dv-border-box-12>
 
@@ -56,5 +61,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+.item {
+  width: 10vw;
+  height: 2vw;
+}
 </style>

@@ -23,7 +23,7 @@ export default {
     return {
       config: {
         showValue: true,
-        fontSize: 9,
+        fontSize: 14,
         data: [
           {
             name: '预制叶根 PS',

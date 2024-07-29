@@ -59,14 +59,7 @@ export default {
 }
 </script>
 
-<style lang="less">
-#dv-full-screen-container {
-  background-image: url('~@/assets/img/bg.png');
-  background-size: 100% 100%;
-  box-shadow: 0 0 3px blue;
-  display: flex;
-  flex-direction: column;
-}
+<style lang="less" scoped>
 
 #data-view {
   width: 100%;
