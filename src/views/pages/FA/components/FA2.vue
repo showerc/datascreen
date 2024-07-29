@@ -25,7 +25,7 @@ export default {
           ['8月18日', 'C', '事故描述描述描述', '责任人', '8月20日']
 
         ],
-        columnWidth: [85, 55, 180, 70, 85],
+        columnWidth: [85, 55, 400, 70, 85],
         align: ['left', 'center', 'left', 'left', 'left'],
         rowNum: 5
       }

@@ -145,10 +145,7 @@ export default {
       })
     }
     for (let i = 0; i < dateArray.length; i++) {
-      dateArray[i].d5 = 0
-      for (let j = 0; j <= i; j++) {
-        dateArray[i].d5 += dateArray[j].d3 + dateArray[j].d4
-      }
+      dateArray[i].d5 = ((i === 0 ? 0 : dateArray[i - 1].d5) + dateArray[i].d3 + dateArray[i].d4)
       option.series[0].data.push(dateArray[i].d1)
       option.series[1].data.push(dateArray[i].d2)
       option.series[2].data.push(dateArray[i].d3)

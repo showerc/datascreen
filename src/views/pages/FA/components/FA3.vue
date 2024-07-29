@@ -15,8 +15,7 @@ export default {
   name: 'A4',
   data() {
     return {
-      option: {},
-      dates: []
+      option: {}
     }
   },
   created() {
@@ -96,21 +95,15 @@ export default {
       option.xAxis.data.push(`${day}`)
       dateArray.push({
         date: `${month}月${day}日`,
-        d1: 3,
         d2: Math.floor(Math.random() * 2)
       })
     }
     for (let i = 0; i < dateArray.length; i++) {
-      dateArray[i].d3 = 0
-      for (let j = 0; j <= i; j++) {
-        dateArray[i].d3 += dateArray[j].d2
-      }
+      dateArray[i].d3 = ((i === 0 ? 0 : dateArray[i - 1].d3) + dateArray[i].d2)
       option.series[0].data.push(dateArray[i].d2)
-      option.series[1].data.push(dateArray[i].d1)
+      option.series[1].data.push(3)
       option.series[2].data.push(dateArray[i].d3)
     }
-    console.log(dateArray)
-    this.dates = dateArray
     this.option = option
   }
 }

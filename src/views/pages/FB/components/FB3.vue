@@ -15,8 +15,7 @@ export default {
   name: 'A4',
   data() {
     return {
-      option: {},
-      dates: []
+      option: {}
     }
   },
   created() {
@@ -135,8 +134,6 @@ export default {
       option.series[4].data.push(Math.random() * 30)
     }
 
-    console.log(dateArray)
-    this.dates = dateArray
     this.option = option
   }
 }

@@ -128,8 +128,8 @@ export default {
     for (let i = 0; i < dateArray.length; i++) {
       dateArray[i].d3 = 0
       dateArray[i].d4 = 0
-      dateArray[i].d3 = ((i === 0 ? dateArray[i].d1 : dateArray[i - 1].d3) + dateArray[i].d1)
-      dateArray[i].d4 = ((i === 0 ? dateArray[i].d2 : dateArray[i - 1].d4) + dateArray[i].d2)
+      dateArray[i].d3 = ((i === 0 ? 0 : dateArray[i - 1].d3) + dateArray[i].d1)
+      dateArray[i].d4 = ((i === 0 ? 0 : dateArray[i - 1].d4) + dateArray[i].d2)
 
       option.series[0].data.push(dateArray[i].d1)
       option.series[1].data.push(dateArray[i].d2)

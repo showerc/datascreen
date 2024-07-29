@@ -1,7 +1,7 @@
 <template>
   <dv-border-box-12>
     <div class=""
-         style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px">
+         style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px;align-content: center">
       <div class="module-title" style="margin-bottom: 10px">安全事故统计</div>
       <div style="display: flex;flex-wrap: wrap;padding: 20px">
         <div v-for="(d,index) in dates" :key="index" class="date-item" :class="{'danger':d.type==='danger'}">
@@ -13,7 +13,7 @@
           <div v-else>{{ d.date }}</div>
         </div>
       </div>
-      <dv-decoration-1 style="width:200px;height:50px;"/>
+      <dv-decoration-1 style="width:200px;height:50px;position: absolute;right: 30px;bottom: 30px"/>
 
     </div>
   </dv-border-box-12>

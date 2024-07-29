@@ -48,33 +48,9 @@ export default {
 
 <style lang="less" scoped>
 
-#data-view {
-  width: 100%;
-  height: 100%;
-  background-color: #030409;
-  color: #fff;
-
-  .main-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 定义三列，每列占1份空间 */
-    grid-template-rows: repeat(6, 1fr); /* 定义两行，每行占1份空间 */
-    gap: 10px; /* 设置网格项之间的间距 */
-    width: 100%; /* 设置容器的宽度 */
-    height: auto;
-    flex: 1; /* 设置容器的高度 */
-    overflow: hidden;
-  }
-}
-
-.tag {
-
-  color: #aaa;
-
-  &.active {
-    color: #fff;
-    background: rgba(255, 255, 255, .2);
-    border-radius: 2px;
-  }
+.main-container {
+  grid-template-columns: repeat(3, 1fr); /* 定义三列，每列占1份空间 */
+  grid-template-rows: repeat(6, 1fr); /* 定义两行，每行占1份空间 */
 }
 
 </style>

@@ -61,7 +61,7 @@ export default {
     }
   },
   created() {
-    setInterval(() => {
+    setTimeout(() => {
       this.config1 = {
         number: [25 + Math.floor(Math.random() * 5)],
         content: '{nt}℃'

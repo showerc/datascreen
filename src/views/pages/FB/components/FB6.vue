@@ -12,11 +12,10 @@
 
 <script>
 export default {
-  name: 'A4',
+  name: 'FB6',
   data() {
     return {
-      option: {},
-      dates: []
+      option: {}
     }
   },
   created() {
@@ -135,27 +134,11 @@ export default {
       option.series[4].data.push(Math.random() * 30)
     }
 
-    console.log(dateArray)
-    this.dates = dateArray
     this.option = option
   }
 }
 </script>
 
 <style lang="less" scoped>
-.date-item {
-  width: 70px;
-  height: 70px;
-  border: 1px solid #8ad153;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #8ad153;
-  font-size: 12px;
 
-  &.danger {
-    border-color: transparent;
-    color: red;
-  }
-}
 </style>
