@@ -2,7 +2,7 @@
   <dv-border-box-12>
     <div class=""
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px">
-      <div class="module-title" style="margin-bottom: 10px">{{ title }}</div>
+      <div class="module-title" style="margin-bottom: 10px">临时专项工作</div>
       <img src="@/assets/img/1.gif" style="width:90%"/>
     </div>
   </dv-border-box-12>
@@ -11,13 +11,7 @@
 
 <script>
 export default {
-  name: 'A4',
-  props: {
-    title: {
-      type: String,
-      default: ''
-    }
-  },
+  name: 'FC4',
   data() {
     return {
       config: {
@@ -44,20 +38,7 @@ export default {
     }
   },
   created() {
-    setInterval(() => {
-      this.config3 = {
-        number: [40 + Math.floor(Math.random() * 10)],
-        content: '{nt}DB'
-      }
-      this.config4 = {
-        number: [80 + Math.floor(Math.random() * 5)],
-        content: '{nt}LX'
-      }
-      this.config5 = {
-        number: [390 + Math.floor(Math.random() * 30)],
-        content: '{nt}粒/升'
-      }
-    }, 2000)
+
   }
 }
 </script>

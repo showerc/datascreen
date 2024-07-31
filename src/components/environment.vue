@@ -1,10 +1,10 @@
 <template>
   <dv-border-box-12>
-    <div class=""
+    <div class="box-bg-blue"
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px">
       <div class="module-title" style="margin-bottom: 10px">环境数据</div>
       <div
-        style="width: 100%;display: flex;justify-content: center;padding:0 10px;align-items: center;box-sizing: border-box;flex-wrap: wrap;align-content: center;row-gap: 10px;column-gap: 5px;flex-direction: column">
+        style="width: 100%;display: flex;justify-content: center;padding:0 10px;align-items: center;box-sizing: border-box;flex-wrap: wrap;align-content: center;row-gap: 10px;column-gap: 5px;flex-direction: column;height: 100%;overflow: hidden;padding-bottom: 20px">
         <dv-border-box-13 class="text-box item">
           <dv-digital-flop :config="config1" class="num"/>
           <div class="text-box-desc">温度</div>
@@ -13,6 +13,7 @@
           <dv-digital-flop :config="config2" class="num"/>
           <div class="text-box-desc">湿度</div>
         </dv-border-box-13>
+
         <!--        <dv-border-box-13 class="text-box item">-->
         <!--          <dv-digital-flop :config="config3" class="num"/>-->
         <!--          <div class="text-box-desc">噪音</div>-->
@@ -81,8 +82,9 @@ export default {
 
 <style lang="less" scoped>
 .item {
-  width: 9vw;
+  width: 7vw;
   height: 6vw;
+
 }
 
 .num {

@@ -1,11 +1,12 @@
 <template>
   <dv-border-box-12>
-    <div class=""
+    <div class="box-bg-blue"
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;display: flex;flex-direction: column;justify-content: space-between;position: relative;
          align-items: center;">
       <div class="module-title">成本</div>
 
       <dv-charts :option="option" style="width:90%;"/>
+      <dv-decoration-2 style="width:80%;height:50px;position: absolute;bottom:0px;left:10%"/>
 
     </div>
   </dv-border-box-12>
@@ -36,16 +37,22 @@ export default {
             style: {
               fill: '#FFF'
             }
-          }
+          },
+          splitNumber: 4
         },
         yAxis: {
           name: '',
           data: ['灌注树脂', '手糊树脂', '修补树脂', '粘结剂'],
           axisLabel: {
             style: {
-              fill: '#FFF'
+              fill: '#FFF',
+              rotate: 90,
+              textAlign: 'center',
+              fontSize: 16
+
             }
           }
+
         },
         series: [
           {

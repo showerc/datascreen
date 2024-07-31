@@ -1,6 +1,6 @@
 <template>
   <dv-border-box-12>
-    <div class=""
+    <div class="box-bg-blue"
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;justify-content:space-between;position: relative;
          align-items: center;">
       <div class="" style="display: flex;flex-direction: column;align-items: center">
@@ -23,7 +23,7 @@ export default {
     return {
       config: {
         showValue: true,
-        fontSize: 14,
+        fontSize: 16,
         data: [
           {
             name: '预制叶根 PS',

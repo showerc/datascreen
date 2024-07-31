@@ -8,13 +8,13 @@
           <div class="main-container">
 
             <div style="overflow: hidden;grid-column: 1 / span 1;grid-row: 1 / span 4;">
-              <E1/>
+              <E1 title="切边工艺文件"/>
             </div>
             <div style="overflow: hidden;grid-column: 2 / span 1;grid-row: 1 / span 4;">
-              <E1/>
+              <E1 title="外补强工艺文件"/>
             </div>
             <div style="overflow: hidden;grid-column: 3 / span 1;grid-row: 1 / span 4;">
-              <E1/>
+              <E1 title="修型工艺文件"/>
             </div>
             <div style="overflow: hidden;grid-column: 4 / span 1;grid-row: 1 / span 4;">
               <E2/>

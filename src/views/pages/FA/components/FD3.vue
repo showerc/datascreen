@@ -1,8 +1,11 @@
 <template>
-  <dv-border-box-12>
+  <dv-border-box-12 class="box-bg-blue">
     <div class=""
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px">
-      <div class="module-title" style="margin-bottom: 10px">B1030E产线 DPU数据统计</div>
+      <div class="chart-title">
+        B1030E入库计划完成情况
+        <dv-decoration-6 style="width:200px;height:20px;"/>
+      </div>
       <dv-charts :option="option" style="width: 95%;align-self: flex-start"/>
 
     </div>
@@ -12,10 +15,13 @@
 
 <script>
 export default {
-  name: 'A4',
+  name: 'FE3',
   data() {
     return {
-      option: {}
+      option: {},
+      dateArray: [],
+      startIndex: 0,
+      refreshInterval: null
     }
   },
   created() {
@@ -23,7 +29,8 @@ export default {
     const endDate = new Date('2024-08-25')
     const option = {
       legend: {
-        data: ['成型检验', '半成品检验', '监造检验', 'DPU目标', '相控阵检验'],
+        data: ['当日计划', '当日实际', '累计计划', '累计实际'],
+        bottom: 10,
         textStyle: {
           fontSize: 12,
           fill: '#FFF'
@@ -31,7 +38,7 @@ export default {
 
       },
       xAxis: {
-        name: '日期',
+        name: '',
         nameTextStyle: {
           fill: '#FFF',
           fontSize: 12
@@ -39,7 +46,6 @@ export default {
         data: [],
         axisLabel: {
           style: {
-            rotate: 20,
             textAlign: 'left',
             textBaseline: 'top',
             fill: '#FFF'
@@ -48,10 +54,10 @@ export default {
       },
       yAxis: [
         {
-          name: '数量',
+          name: '',
           data: 'value',
           min: 0,
-          max: 140,
+          max: 8,
           axisLabel: {
             style: {
               fill: '#FFF'
@@ -63,11 +69,11 @@ export default {
           }
         },
         {
-          name: '数量',
+          name: '',
           data: 'value',
           position: 'right',
           min: 0,
-          max: 50,
+          max: 100,
           axisLabel: {
             style: {
               fill: '#FFF'
@@ -81,59 +87,87 @@ export default {
       ],
       series: [
         {
-          name: '成型检验',
+          name: '当日计划',
           type: 'bar',
           data: [],
-
           yAxisIndex: 0
         },
         {
-          name: '半成品检验',
+          name: '当日实际',
           type: 'bar',
           data: [],
-
           yAxisIndex: 0
         },
         {
-          name: '监造检验',
-          type: 'bar',
-          data: [],
-
-          yAxisIndex: 0
-        },
-        {
-          name: 'DPU目标',
+          name: '累计计划',
           type: 'line',
           data: [],
-
+          label: {
+            show: true
+          },
+          smooth: true,
+          lineArea: {
+            show: true,
+            gradient: ['rgba(55, 162, 218, 0.6)', 'rgba(55, 162, 218, 0)']
+          },
+          linePoint: {
+            radius: 4,
+            style: {
+              fill: '#00db95'
+            }
+          },
           yAxisIndex: 1
-
         },
         {
-          name: '相控阵检验',
+          name: '累计实际',
           type: 'line',
           data: [],
-
+          label: {
+            show: true
+          },
           yAxisIndex: 1
         }
       ]
     }
-    const dateArray = []
     for (let currentDate = startDate; currentDate <= endDate; currentDate.setDate(currentDate.getDate() + 1)) {
       const month = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'][currentDate.getMonth()]
       const day = currentDate.getDate()
-      option.xAxis.data.push(`${day}`)
-      dateArray.push({
-        date: `${month}月${day}日`
+      this.dateArray.push({
+        date: `${month}月${day}日`,
+        d1: Math.floor(2 + Math.random() * 2),
+        d2: Math.floor(1 + Math.random() * 3)
       })
-      option.series[0].data.push(Math.random() * 100)
-      option.series[1].data.push(Math.random() * 100)
-      option.series[2].data.push(Math.random() * 100)
-      option.series[3].data.push(Math.random() * 30)
-      option.series[4].data.push(Math.random() * 30)
     }
-
+    for (let i = 0; i < this.dateArray.length; i++) {
+      this.dateArray[i].d3 = ((i === 0 ? this.dateArray[i].d1 : this.dateArray[i - 1].d3) + this.dateArray[i].d1)
+      this.dateArray[i].d4 = ((i === 0 ? this.dateArray[i].d2 : this.dateArray[i - 1].d4) + this.dateArray[i].d2)
+    }
     this.option = option
+    this.refreshOption()
+    this.refreshInterval = setInterval(() => this.refreshOption(), this.$config.refreshTime || 5000)
+  },
+  beforeDestroy() {
+    clearInterval(this.refreshInterval)
+  },
+  methods: {
+    refreshOption() {
+      console.log('refresh')
+      const totalLength = this.dateArray.length
+      const day = 7
+      const option = Object.assign({}, this.option)
+      const dateArray = this.dateArray.slice(this.startIndex, this.startIndex + day)
+      option.xAxis.data = dateArray.map(item => item.date)
+      option.series[0].data = dateArray.map(item => item.d1)
+      option.series[1].data = dateArray.map(item => item.d2)
+      option.series[2].data = dateArray.map(item => item.d3)
+      option.series[3].data = dateArray.map(item => item.d4)
+
+      this.startIndex++
+      if (this.startIndex + day >= totalLength) {
+        this.startIndex = 0
+      }
+      this.option = option
+    }
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div id="data-view" @click="$router.push('/b')">
     <dv-full-screen-container>
-      <dv-border-box-11 title="模具工位">
+      <dv-border-box-14 title="模具工位">
         <div
           style="height:100%;display: flex;flex-direction: column;overflow: hidden;box-sizing: border-box;padding: 10px;padding-top:60px">
           <!--          <div style="display: flex;justify-content: center;align-items: center;font-size:16px;gap:10px;padding:10px">-->
@@ -46,7 +46,7 @@
 
         </div>
 
-      </dv-border-box-11>
+      </dv-border-box-14>
 
     </dv-full-screen-container>
   </div>

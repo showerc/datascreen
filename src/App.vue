@@ -16,6 +16,19 @@ export default {
 </script>
 
 <style lang="less">
+
+.chart-title {
+  text-align: right;
+  position: absolute;
+  right: 20px;
+  font-size: 14px;
+  top: 20px;
+}
+
+.box-bg-blue {
+  background: rgba(6, 30, 93, .5)
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

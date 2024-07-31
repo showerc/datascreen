@@ -1,12 +1,12 @@
 <template>
   <dv-border-box-12 class="box-bg-blue">
-    <div class=""
-         style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;">
+    <div
+      style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;">
       <div class="chart-title">
-        隐患排查与整改
-        <dv-decoration-3 style="width:200px;height:20px;"/>
+        壳体在制品数据统计
+        <dv-decoration-6 style="width:200px;height:20px;"/>
       </div>
-      <dv-charts :option="option"/>
+      <dv-charts :option="option" style="width: 100%;align-self: flex-start"/>
 
     </div>
   </dv-border-box-12>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'FA3',
+  name: 'A4',
   data() {
     return {
       option: {},
@@ -29,9 +29,10 @@ export default {
     const endDate = new Date('2024-08-25')
     const option = {
       legend: {
-        data: ['当日实际', '当日目标', '累计实际'],
+        data: ['B1030E', 'B1080D', 'B973A', 'B950A'],
+        bottom: 10,
         textStyle: {
-          fontSize: 8,
+          fontSize: 12,
           fill: '#FFF'
         }
 
@@ -40,89 +41,101 @@ export default {
         name: '',
         nameTextStyle: {
           fill: '#FFF',
-          fontSize: 10
+          fontSize: 12
         },
         data: [],
         axisLabel: {
           style: {
+            rotate: 0,
             textAlign: 'left',
             textBaseline: 'top',
-            fill: '#FFF',
-            fontSize: 10
-          }
-        }
-      },
-      yAxis: {
-        data: 'value',
-        min: 0,
-        axisLabel: {
-          style: {
             fill: '#FFF'
           }
-        },
-        splitLine: {
-          show: false
-        },
-        nameTextStyle: {
-          fill: '#FFF',
-          fontSize: 12
         }
-
       },
+      yAxis: [
+        {
+          name: '',
+          data: 'value',
+          min: 0,
+          max: 30,
+          axisLabel: {
+            style: {
+              fill: '#FFF'
+            }
+          },
+          nameTextStyle: {
+            fill: '#FFF',
+            fontSize: 12
+          }
+        },
+        {
+          name: '',
+          data: 'value',
+          position: 'right',
+          min: 0,
+          axisLabel: {
+            style: {
+              fill: '#FFF'
+            }
+          },
+          nameTextStyle: {
+            fill: '#FFF',
+            fontSize: 12
+          }
+        }
+      ],
       series: [
         {
-          name: '当日实际',
+          name: 'B1030E',
           type: 'bar',
           data: [],
 
-          barStyle: {
-            fill: 'rgba(0, 186, 255, 0.4)'
-          }
+          yAxisIndex: 0
         },
         {
-          name: '当日目标',
+          name: 'B1080D',
           type: 'bar',
-          data: []
+          data: [],
+
+          yAxisIndex: 0
         },
         {
-          name: '累计实际',
-          type: 'line',
+          name: 'B973A',
+          type: 'bar',
           data: [],
-          label: {
-            show: true
-          },
-          smooth: true,
-          lineArea: {
-            show: true,
-            gradient: ['rgba(55, 162, 218, 0.6)', 'rgba(55, 162, 218, 0)']
-          },
-          linePoint: {
-            radius: 4,
-            style: {
-              fill: '#00db95'
-            }
-          }
+
+          yAxisIndex: 0
+        },
+        {
+          name: 'B950A',
+          type: 'bar',
+          data: [],
+
+          yAxisIndex: 0
+
         }
       ]
     }
+
     for (let currentDate = startDate; currentDate <= endDate; currentDate.setDate(currentDate.getDate() + 1)) {
       const month = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'][currentDate.getMonth()]
       const day = currentDate.getDate()
-      // option.xAxis.data.push(`${day}日`)
+      // option.xAxis.data.push(`${day}`)
       this.dateArray.push({
         date: `${month}月${day}日`,
-        d2: Math.floor(Math.random() * 2)
+        d1: Math.floor(Math.random() * 20),
+        d2: Math.floor(Math.random() * 20),
+        d3: Math.floor(Math.random() * 20),
+        d4: Math.floor(Math.random() * 20)
       })
     }
-    for (let i = 0; i < this.dateArray.length; i++) {
-      this.dateArray[i].d3 = ((i === 0 ? 0 : this.dateArray[i - 1].d3) + this.dateArray[i].d2)
-      // option.series[0].data.push(this.dateArray[i].d2)
-      // option.series[1].data.push(2)
-      // option.series[2].data.push(this.dateArray[i].d3)
-    }
+    // for (let i = 0; i < this.dateArray.length; i++) {
+    //   this.dateArray[i].d5 = ((i === 0 ? 0 : this.dateArray[i - 1].d5) + this.dateArray[i].d1 + this.dateArray[i].d2 + this.dateArray[i].d3 + this.dateArray[i].d4)
+    // }
     this.option = option
-    this.refreshOption()
 
+    this.refreshOption()
     this.refreshInterval = setInterval(() => this.refreshOption(), this.$config.refreshTime || 5000)
   },
   beforeDestroy() {
@@ -136,15 +149,15 @@ export default {
       const option = Object.assign({}, this.option)
       const dateArray = this.dateArray.slice(this.startIndex, this.startIndex + day)
       option.xAxis.data = dateArray.map(item => item.date)
-      option.series[0].data = dateArray.map(item => item.d2)
-      option.series[1].data = dateArray.map(() => 2)
+      option.series[0].data = dateArray.map(item => item.d1)
+      option.series[1].data = dateArray.map(item => item.d2)
       option.series[2].data = dateArray.map(item => item.d3)
+      option.series[3].data = dateArray.map(item => item.d4)
 
       this.startIndex++
       if (this.startIndex + day >= totalLength) {
         this.startIndex = 0
       }
-
       this.option = option
     }
   }

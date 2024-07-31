@@ -1,7 +1,7 @@
 <template>
   <div id="data-view" @click="$router.push('/e')">
     <dv-full-screen-container>
-      <dv-border-box-11 title="打胶房">
+      <dv-border-box-14 title="打胶房">
         <div
           style="height:100%;display: flex;flex-direction: column;overflow: hidden;box-sizing: border-box;padding: 10px;padding-top:60px">
 
@@ -23,7 +23,7 @@
 
         </div>
 
-      </dv-border-box-11>
+      </dv-border-box-14>
 
     </dv-full-screen-container>
   </div>

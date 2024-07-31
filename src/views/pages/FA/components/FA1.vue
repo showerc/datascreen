@@ -1,19 +1,19 @@
 <template>
-  <dv-border-box-12>
+  <dv-border-box-12 class="box-bg-blue">
     <div class=""
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px;align-content: center">
-      <div class="module-title" style="margin-bottom: 10px">安全事故统计</div>
-      <div style="display: flex;flex-wrap: wrap;padding: 20px">
-        <div v-for="(d,index) in dates" :key="index" class="date-item" :class="{'danger':d.type==='danger'}">
+      <div class="module-title">安全事故统计</div>
+      <!--      <div style="display: flex;flex-wrap: wrap;padding: 20px">-->
+      <!--        <div v-for="(d,index) in dates" :key="index" class="date-item" :class="{'danger':d.type==='danger'}">-->
 
-          <dv-border-box-8 v-if="d.type==='danger'" :color="['red','red']" class="text-box">{{
-              d.date
-            }}
-          </dv-border-box-8>
-          <div v-else>{{ d.date }}</div>
-        </div>
-      </div>
-      <dv-decoration-1 style="width:200px;height:50px;position: absolute;right: 30px;bottom: 30px"/>
+      <!--          <dv-border-box-8 v-if="d.type==='danger'" :color="['red','red']" class="text-box">{{-->
+      <!--              d.date-->
+      <!--            }}-->
+      <!--          </dv-border-box-8>-->
+      <!--          <div v-else>{{ d.date }}</div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <dv-scroll-board :config="config" style="width:95%;height:calc(100% - 80px)"/>
 
     </div>
   </dv-border-box-12>
@@ -22,11 +22,26 @@
 
 <script>
 export default {
-  name: 'A4',
+  name: 'FA1',
   data() {
     return {
 
-      dates: []
+      dates: [],
+      config: {
+        header: ['日期', '等级', '事故描述', '责任人', '整改'],
+        data: [
+          ['8月4日', 'D', '事故描述描述描述', '责任人', '8月5日'],
+          ['8月18日', 'C', '事故描述描述描述', '责任人', '8月20日'],
+          ['8月4日', 'D', '事故描述描述描述', '责任人', '8月5日'],
+          ['8月18日', 'C', '事故描述描述描述', '责任人', '8月20日'],
+          ['8月4日', 'D', '事故描述描述描述', '责任人', '8月5日'],
+          ['8月18日', 'C', '事故描述描述描述', '责任人', '8月20日']
+
+        ],
+        columnWidth: [90, 55, 190, 85, 90],
+        align: ['left', 'center', 'left', 'left', 'left'],
+        rowNum: 3
+      }
     }
   },
   created() {
@@ -62,12 +77,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #8ad153;
+  color: #fff;
+  background: #8ad153;
   font-size: 12px;
 
   &.danger {
     border-color: transparent;
-    color: red;
+    background: red;
   }
 }
 </style>

@@ -1,13 +1,16 @@
 <template>
-  <dv-border-box-12 class="box-bg-blue" style="">
-    <div class=""
-         style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px;;box-sizing: border-box">
-      <div class="chart-title">
-        安全质量违规与考核
-        <dv-decoration-3 style="width:200px;height:20px;"/>
-      </div>
-      <dv-charts ref="chart" :option="option"/>
+  <dv-border-box-12 style="display:flex;" class="box-bg-blue">
+    <div style="height:100%;display: flex;align-items: center;justify-content: center;align-content: center">
+      <div style="color:#00c0ff;font-weight: bold;font-size: 24px">车间连续安全生产</div>
 
+      <dv-water-level-pond :config="{
+        data: [45],
+        shape: 'round',
+        waveHeight: 25,
+        waveNum: 2,
+        formatter:`{value}天`
+      }"
+                           style="width:80px;height:80px"/>
     </div>
   </dv-border-box-12>
 
@@ -31,12 +34,8 @@ export default {
       legend: {
         data: ['当日安全违规数量', '当日质量违规数量', '当日安全考核金额', '当日质量考核金额', '累计考核金额'],
         textStyle: {
-          fontSize: 7,
+          fontSize: 12,
           fill: '#FFF'
-        },
-        iconStyle: {
-          fontSize: 7
-
         }
 
       },
@@ -136,12 +135,6 @@ export default {
           lineArea: {
             show: true,
             gradient: ['rgba(55, 162, 218, 0.6)', 'rgba(55, 162, 218, 0)']
-          },
-          linePoint: {
-            radius: 4,
-            style: {
-              fill: '#00db95'
-            }
           }
         }
 
@@ -167,10 +160,11 @@ export default {
     }
     this.option = option
     this.refreshOption()
-    this.refreshInterval = setInterval(() => this.refreshOption(), this.$config.refreshTime || 5000)
+
+    this.refreshInterval = setInterval(() => this.refreshOption(), 2000)
   },
   beforeDestroy() {
-    clearInterval(this.refreshInterval)
+    // clearInterval(this.refreshInterval)
   },
   methods: {
     refreshOption() {

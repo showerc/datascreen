@@ -3,7 +3,7 @@
     <div class=""
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;">
       <div class="chart-title">
-        隐患排查与整改
+        B1030E 树脂用量统计
         <dv-decoration-3 style="width:200px;height:20px;"/>
       </div>
       <dv-charts :option="option"/>
@@ -29,26 +29,23 @@ export default {
     const endDate = new Date('2024-08-25')
     const option = {
       legend: {
-        data: ['当日实际', '当日目标', '累计实际'],
+        data: ['实际用量', '目标用量'],
         textStyle: {
-          fontSize: 8,
+          fontSize: 11,
           fill: '#FFF'
         }
 
       },
       xAxis: {
         name: '',
-        nameTextStyle: {
-          fill: '#FFF',
-          fontSize: 10
-        },
+
         data: [],
         axisLabel: {
           style: {
             textAlign: 'left',
             textBaseline: 'top',
             fill: '#FFF',
-            fontSize: 10
+            fontSize: 11
           }
         }
       },
@@ -71,21 +68,16 @@ export default {
       },
       series: [
         {
-          name: '当日实际',
+          name: '实际用量',
           type: 'bar',
           data: [],
-
           barStyle: {
             fill: 'rgba(0, 186, 255, 0.4)'
           }
         },
+
         {
-          name: '当日目标',
-          type: 'bar',
-          data: []
-        },
-        {
-          name: '累计实际',
+          name: '目标用量',
           type: 'line',
           data: [],
           label: {
@@ -111,15 +103,10 @@ export default {
       // option.xAxis.data.push(`${day}日`)
       this.dateArray.push({
         date: `${month}月${day}日`,
-        d2: Math.floor(Math.random() * 2)
+        d1: Math.floor(8000 + Math.random() * 1000)
       })
     }
-    for (let i = 0; i < this.dateArray.length; i++) {
-      this.dateArray[i].d3 = ((i === 0 ? 0 : this.dateArray[i - 1].d3) + this.dateArray[i].d2)
-      // option.series[0].data.push(this.dateArray[i].d2)
-      // option.series[1].data.push(2)
-      // option.series[2].data.push(this.dateArray[i].d3)
-    }
+
     this.option = option
     this.refreshOption()
 
@@ -136,9 +123,8 @@ export default {
       const option = Object.assign({}, this.option)
       const dateArray = this.dateArray.slice(this.startIndex, this.startIndex + day)
       option.xAxis.data = dateArray.map(item => item.date)
-      option.series[0].data = dateArray.map(item => item.d2)
-      option.series[1].data = dateArray.map(() => 2)
-      option.series[2].data = dateArray.map(item => item.d3)
+      option.series[0].data = dateArray.map(item => item.d1)
+      option.series[1].data = dateArray.map(() => 7920)
 
       this.startIndex++
       if (this.startIndex + day >= totalLength) {

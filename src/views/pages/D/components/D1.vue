@@ -1,6 +1,6 @@
 <template>
   <dv-border-box-12>
-    <div class=""
+    <div class="box-bg-blue"
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;display: flex;flex-direction: column;justify-content: space-between;position: relative;
          align-items: center;">
       <div class="module-title">B1030D树脂用量</div>
@@ -19,7 +19,7 @@ export default {
     return {
       option: {
         legend: {
-          data: ['壳体树脂', '预制叶根树脂', '腹板', '预制UD', '大梁补强', '内补强', '外补强', '隔板补强/导线固定', '配重盒制作', '后缘挡胶边制作', '配重', '修补'],
+          data: ['壳体树脂', '预制叶根树脂', '腹板', '预制UD', '大梁补强', '内补强', '外补强', '隔板补强/导线固定', '配重盒制作', '后缘挡胶边制作', '配重', '修补', '总值'],
           textStyle: {
             fill: '#FFF'
           },
@@ -124,6 +124,25 @@ export default {
             data: [1064, 1050, 1050, 1050, 1045, 1090, 1060, 1070, 1080, 1137, 1050, 1050],
             type: 'bar',
             stack: 'a'
+          },
+          {
+            name: '总值',
+            data: [14500, 14500, 14700, 14900, 14900, 15300, 14900, 14900, 14900, 15600, 14900, 14700],
+            type: 'line',
+            label: {
+              show: true
+            },
+
+            lineStyle: {
+              stroke: '#f5d94e'
+            },
+            linePoint: {
+              radius: 4,
+              style: {
+                fill: '#f5d94e',
+                stroke: 'transparent'
+              }
+            }
           }
         ]
       }

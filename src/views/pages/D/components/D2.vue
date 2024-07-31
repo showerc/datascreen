@@ -1,6 +1,6 @@
 <template>
   <dv-border-box-12>
-    <div class=""
+    <div class="box-bg-blue"
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;display: flex;flex-direction: column;justify-content: space-between;position: relative;
          align-items: center;">
       <div class="module-title">B1030D粘接剂用量统计</div>
@@ -19,7 +19,7 @@ export default {
     return {
       option: {
         legend: {
-          data: ['一粘', '二粘', '隔板', '防雨环粘接', '外补强', '配重', '修补'],
+          data: ['一粘', '二粘', '隔板', '防雨环粘接', '外补强', '配重', '修补', '总值'],
           textStyle: {
             fill: '#FFF'
           },
@@ -51,7 +51,8 @@ export default {
               fill: '#FFF'
             }
           },
-          min: 0
+          min: 0,
+          max: 12000
         },
         series: [
           {
@@ -94,6 +95,25 @@ export default {
             data: [1064, 1050, 1050, 1050, 1045, 1090, 1060, 1070, 1080, 1137, 1050, 1050],
             type: 'bar',
             stack: 'a'
+          },
+          {
+            name: '总值',
+            data: [9200, 9200, 9300, 9600, 9650, 9800, 9650, 9650, 9650, 9750, 9600, 9500],
+            type: 'line',
+            label: {
+              show: true
+            },
+
+            lineStyle: {
+              stroke: '#f5d94e'
+            },
+            linePoint: {
+              radius: 4,
+              style: {
+                fill: '#f5d94e',
+                stroke: 'transparent'
+              }
+            }
           }
         ]
       }

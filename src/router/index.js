@@ -88,6 +88,11 @@ export const routes = [
     path: '/fk',
     component: () => import('@/views/pages/FK/index.vue'),
     hidden: true
+  },
+  {
+    path: '/g',
+    component: () => import('@/views/pages/G/index.vue'),
+    hidden: true
   }
 ]
 

@@ -1,13 +1,13 @@
 <template>
   <dv-border-box-12>
-    <div class=""
+    <div class="box-bg-blue"
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;
          align-items: center;">
       <div class="module-title">质量情况</div>
       <div class="module-sub-title">缺陷总数: 50</div>
 
-      <dv-charts :option="option" style="width:120%;"/>
-      <dv-decoration-2 style="width:80%;height:50px;position: absolute;bottom:0px;left:10%"/>
+      <dv-charts :option="option" style="width:150%;"/>
+      <dv-decoration-2 style="width:80%;height:50px;position: absolute;bottom:0;left:10%"/>
 
     </div>
   </dv-border-box-12>
@@ -40,7 +40,11 @@ export default {
             ],
             insideLabel: {
               show: true,
-              formatter: '{name} - {value}'
+              formatter: '{name} - {value}',
+              style: {
+                fontSize: 14,
+                fill: '#000318'
+              }
             },
             outsideLabel: {
               show: false,
