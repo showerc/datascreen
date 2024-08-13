@@ -114,14 +114,16 @@ export default {
           name: '当日安全考核金额',
           type: 'line',
           data: [],
-          yAxisIndex: 1
+          yAxisIndex: 1,
+          smooth: true
 
         },
         {
           name: '当日质量考核金额',
           type: 'line',
           data: [],
-          yAxisIndex: 1
+          yAxisIndex: 1,
+          smooth: true
 
         },
         {

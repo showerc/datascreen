@@ -40,7 +40,7 @@
               <A6/>
             </div>
             <div style="overflow: hidden;grid-column: 5 / span 2;grid-row: 1 / span 3;">
-              <A7/>
+              <A7 :row-num="6"/>
             </div>
           </div>
 

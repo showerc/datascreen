@@ -3,7 +3,7 @@
     <div
       style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;">
       <div class="chart-title">
-        B1030E 员工在岗与出勤情况统计
+        员工在岗与出勤情况统计
         <dv-decoration-6 style="width:200px;height:20px;"/>
       </div>
       <dv-charts :option="option" style="width: 100%;align-self: flex-start"/>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'A4',
+  name: 'GB2',
   data() {
     return {
       option: {},
@@ -25,8 +25,8 @@ export default {
     }
   },
   created() {
-    const startDate = new Date('2024-07-26')
-    const endDate = new Date('2024-08-25')
+    // const startDate = new Date('2024-07-26')
+    // const endDate = new Date('2024-08-25')
     const option = {
       legend: {
         data: ['在岗', '离职', '在编'],
@@ -47,7 +47,7 @@ export default {
         axisLabel: {
           style: {
             rotate: 0,
-            textAlign: 'left',
+            textAlign: 'center',
             textBaseline: 'top',
             fill: '#FFF'
           }
@@ -70,8 +70,22 @@ export default {
       series: [
         {
           name: '在岗',
-          type: 'bar',
-          data: []
+          type: 'line',
+          data: [],
+          smooth: true,
+          lineArea: {
+            show: true,
+            gradient: ['rgba(55, 162, 218, 0.6)', 'rgba(55, 162, 218, 0)']
+          },
+          label: {
+            show: true
+          },
+          linePoint: {
+            radius: 4,
+            style: {
+              fill: '#00db95'
+            }
+          }
         },
         {
           name: '离职',
@@ -80,31 +94,18 @@ export default {
         },
         {
           name: '在编',
-          type: 'line',
-          data: [],
-          smooth: true,
-          lineArea: {
-            show: true,
-            gradient: ['rgba(55, 162, 218, 0.6)', 'rgba(55, 162, 218, 0)']
-          },
-          linePoint: {
-            radius: 4,
-            style: {
-              fill: '#00db95'
-            }
-          }
+          type: 'bar',
+          data: []
         }]
     }
-
-    for (let currentDate = startDate; currentDate <= endDate; currentDate.setDate(currentDate.getDate() + 1)) {
-      const month = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'][currentDate.getMonth()]
-      const day = currentDate.getDate()
+    const jobArr = ['B1030E铺层', 'B1030E灌注', 'B1030E合模', 'B1030E小件', 'B1080D铺层', 'B1080D灌注', 'B1080D合模', 'B1080D小件', 'B950A铺层', 'B950A灌注', 'B950A合模', 'B950A小件', 'B973A铺层', 'B973A灌注', 'B973A合模', 'B973A小件']
+    for (let i = 0; i <= jobArr.length; i++) {
       // option.xAxis.data.push(`${day}`)
-      const d3 = 40
-      const d2 = Math.floor(Math.floor(Math.random() * 5))
+      const d2 = Math.floor(Math.floor(Math.random() * 2))
+      const d3 = Math.floor(10 + Math.floor(Math.random() * 5))
       const d1 = d3 - d2
       this.dateArray.push({
-        date: `${month}月${day}日`,
+        job: jobArr[i],
         d1,
         d2,
         d3
@@ -117,16 +118,16 @@ export default {
     this.refreshInterval = setInterval(() => this.refreshOption(), this.$config.refreshTime || 5000)
   },
   beforeDestroy() {
-    clearInterval(this.refreshInterval)
+    // clearInterval(this.refreshInterval)
   },
   methods: {
     refreshOption() {
       console.log('refresh')
       const totalLength = this.dateArray.length
-      const day = 7
+      const day = 9
       const option = Object.assign({}, this.option)
       const dateArray = this.dateArray.slice(this.startIndex, this.startIndex + day)
-      option.xAxis.data = dateArray.map(item => item.date)
+      option.xAxis.data = dateArray.map(item => item.job)
       option.series[0].data = dateArray.map(item => item.d1)
       option.series[1].data = dateArray.map(item => item.d2)
       option.series[2].data = dateArray.map(item => item.d3)

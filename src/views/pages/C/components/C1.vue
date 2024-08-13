@@ -3,7 +3,7 @@
     <div class="box-bg-blue"
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px">
       <div class="module-title" style="margin-bottom: 10px">已配料信息</div>
-      <dv-scroll-board :config="config" style="width:95%;height:calc(100% - 100px)"/>
+      <dv-scroll-board :config="config" style="width:95%;height:calc(100% - 80px)"/>
     </div>
   </dv-border-box-12>
 
@@ -41,7 +41,7 @@ export default {
         index: true,
         columnWidth: [50],
         align: ['center'],
-        rowNum: 10
+        rowNum: 20
       }
     }
   },

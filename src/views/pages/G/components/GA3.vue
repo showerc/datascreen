@@ -29,7 +29,7 @@ export default {
     const endDate = new Date('2024-08-25')
     const option = {
       legend: {
-        data: ['实际用量', '目标用量'],
+        data: [{ name: '实际用量', icon: 'rect', color: 'rgba(255,219,92,0.8)' }, { name: '目标用量', icon: 'line' }],
         textStyle: {
           fontSize: 11,
           fill: '#FFF'
@@ -72,7 +72,7 @@ export default {
           type: 'bar',
           data: [],
           barStyle: {
-            fill: 'rgba(0, 186, 255, 0.4)'
+            fill: 'rgba(255,219,92,0.8)'
           }
         },
 

@@ -25,6 +25,11 @@ export const routes = [
     hidden: true
   },
   {
+    path: '/c1',
+    component: () => import('@/views/pages/C1/index.vue'),
+    hidden: true
+  },
+  {
     path: '/d',
     component: () => import('@/views/pages/D/index.vue'),
     hidden: true

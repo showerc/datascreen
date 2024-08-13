@@ -2,8 +2,8 @@
   <dv-border-box-12 class="box-bg-blue">
     <div
       style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px">
-      <div class="module-title" style="margin-bottom: 10px">外部质量问题及VOC 统计</div>
-      <dv-scroll-board :config="config" style="width:95%;height:calc(100% - 100px)"/>
+      <div class="module-title-sm">外部质量问题及VOC 统计</div>
+      <dv-scroll-board :config="config" style="width:calc(100% - 10px);height:calc(100% - 60px)"/>
     </div>
   </dv-border-box-12>
 
@@ -15,15 +15,15 @@ export default {
   data() {
     return {
       config: {
-        header: ['时间', '客户', '项目', '叶型', '叶片号', '问题描述/客户要求', '责任部门', '完成时间', '完成情况'],
+        header: ['时间', '客户', '项目', '叶型', '叶片号', '问题描述/客户要求', '责任部门', '完成时间', '状态'],
         data: [
           [
-            '2023-07-26 10:00',
+            '<span style="font-size: 8px">2023-08-01 10:00</span>',
             '客户A',
             '项目1',
             '叶型1',
             '叶片001',
-            '问题描述或客户要求1',
+            '<span style="word-break: break-all;white-space: break-spaces">问题描述或客户要求1111</span>',
             '责任部门1',
             '2023-08-01 10:00',
             '已完成'
@@ -90,7 +90,7 @@ export default {
             '项目7',
             '叶型7',
             '叶片007',
-            '问题描述或客户要求7',
+            '<span style="word-break: break-all">问题描述或客户要求7</span>',
             '责任部门7',
             '2023-08-07 15:20',
             '进行中'
@@ -208,9 +208,9 @@ export default {
 
         ],
         index: true,
-        columnWidth: [50],
-        align: ['center'],
-        rowNum: 5
+        columnWidth: [50, 140, 120, 120, 120, 150, 300, 140, 150],
+        align: ['center', 'center', 'center', 'center', 'center', 'center', 'center', 'center'],
+        rowNum: 4
       }
     }
   },

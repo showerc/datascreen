@@ -1,5 +1,5 @@
 <template>
-  <dv-border-box-12>
+  <dv-border-box-12 class="box-bg-blue">
     <div class=""
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px">
       <div class="module-title" style="margin-bottom: 10px">关键控制点</div>

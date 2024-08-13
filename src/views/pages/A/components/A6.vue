@@ -19,6 +19,7 @@ export default {
   data() {
     return {
       option: {
+        color: ['#ff9f7f', '#96bfff', '#ffdb5c'],
         legend: {
           data: ['标准用量', '实际用量'],
           textStyle: {
@@ -58,12 +59,15 @@ export default {
           {
             name: '标准用量',
             data: [1300, 1900, 1800, 2000],
-            type: 'bar'
+            type: 'bar',
+            shapeType: 'leftEchelon'
           },
           {
             name: '实际用量',
             data: [1200, 2000, 1900, 2100],
-            type: 'bar'
+            type: 'bar',
+            shapeType: 'rightEchelon'
+
           }
         ]
       }

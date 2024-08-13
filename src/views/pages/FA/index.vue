@@ -1,7 +1,7 @@
 <template>
   <div id="data-view" @click="$router.push('/g')">
     <dv-full-screen-container>
-      <dv-border-box-14 title="新疆项⽬部T4 精益运营管理看板">
+      <dv-border-box-14 title="新疆项⽬部T4 精益运营管理看板" :title-width="1800" :font-size="30">
         <div
           style="height:100%;display: flex;flex-direction: column;overflow: hidden;box-sizing: border-box;padding: 10px;padding-top:60px">
 
@@ -9,46 +9,46 @@
             <div style="overflow: hidden;grid-column: 1 / span 4;grid-row: 1 / span 1;">
               <safe-count/>
             </div>
-            <div style="overflow: hidden;grid-column: 1 / span 4;grid-row: 2 / span 2;">
+            <div style="overflow: hidden;grid-column: 1 / span 4;grid-row: 2 / span 3;">
               <FA1/>
             </div>
-            <div style="overflow: hidden;grid-column: 1 / span 4;grid-row:  4/ span 3;">
+            <div style="overflow: hidden;grid-column: 1 / span 4;grid-row:  5 / span 3;">
               <FA3/>
             </div>
-            <div style="overflow: hidden;grid-column: 1 / span 4;grid-row: 7 / span 3;">
+            <div style="overflow: hidden;grid-column: 1 / span 4;grid-row: 8 / span 3;">
               <FA4/>
             </div>
-            <div style="overflow: hidden;grid-column: 5 / span 4;grid-row: 4 / span 2;">
+            <div style="overflow: hidden;grid-column: 5 / span 4;grid-row: 5 / span 2;">
               <FB1/>
             </div>
-            <div style="overflow: hidden;grid-column: 5 / span 4;grid-row: 6 / span 2;">
+            <div style="overflow: hidden;grid-column: 5 / span 4;grid-row: 7 / span 2;">
               <FB2/>
             </div>
-            <div style="overflow: hidden;grid-column: 5 / span 4;grid-row: 8 / span 2;">
+            <div style="overflow: hidden;grid-column: 5 / span 4;grid-row: 9 / span 2;">
               <FB3/>
             </div>
-            <div style="overflow: hidden;grid-column: 5 / span 6;grid-row: 1 / span 3;">
-              <FB4/>
-            </div>
-            <div style="overflow: hidden;grid-column: 9 / span 4;grid-row: 4 / span 2;">
-              <FC1/>
-            </div>
-            <div style="overflow: hidden;grid-column: 9 / span 4;grid-row: 6 / span 2;">
-              <FC2/>
-            </div>
-            <div style="overflow: hidden;grid-column: 9 / span 4;grid-row: 8 / span 2;">
-              <FC3/>
-            </div>
-            <div style="overflow: hidden;grid-column: 11 / span 6;grid-row: 1 / span 3;">
+            <div style="overflow: hidden;grid-column: 5 / span 12;grid-row: 1 / span 2;">
               <FD1/>
             </div>
-            <div style="overflow: hidden;grid-column: 13 / span 4;grid-row: 4 / span 2;">
+            <div style="overflow: hidden;grid-column: 9 / span 4;grid-row: 5 / span 2;">
+              <FC1/>
+            </div>
+            <div style="overflow: hidden;grid-column: 9 / span 4;grid-row: 7 / span 2;">
+              <FC2/>
+            </div>
+            <div style="overflow: hidden;grid-column: 9 / span 4;grid-row: 9  / span 2;">
+              <FC3/>
+            </div>
+            <div style="overflow: hidden;grid-column: 5 / span 12;grid-row: 3 / span 2;">
+              <FB4/>
+            </div>
+            <div style="overflow: hidden;grid-column: 13 / span 4;grid-row: 5 / span 2;">
               <FD2/>
             </div>
-            <div style="overflow: hidden;grid-column: 13 / span 4;grid-row: 6 / span 2;">
+            <div style="overflow: hidden;grid-column: 13 / span 4;grid-row: 7 / span 2;">
               <FD3/>
             </div>
-            <div style="overflow: hidden;grid-column: 13 / span 4;grid-row: 8 / span 2;">
+            <div style="overflow: hidden;grid-column: 13 / span 4;grid-row: 9 / span 2;">
               <FD4/>
             </div>
           </div>
@@ -115,7 +115,7 @@ export default {
 .main-container {
 
   grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(9, 1fr);
+  grid-template-rows: repeat(10, 1fr);
 
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <dv-border-box-12>
+  <dv-border-box-12 class="box-bg-blue">
     <div class=""
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;display: flex;flex-direction: column;justify-content: space-between;position: relative;
          align-items: center;">

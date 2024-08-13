@@ -26,7 +26,7 @@ export default {
         ],
         columnWidth: [100, 55, 200, 70, 85],
         align: ['left', 'center', 'left', 'left', 'left'],
-        rowNum: 5
+        rowNum: 6
       }
     }
   },

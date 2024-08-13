@@ -3,7 +3,7 @@
     <div class=""
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px">
       <div class="module-title">各模具生产信息</div>
-      <dv-scroll-board :config="config" style="width:95%;"/>
+      <dv-scroll-board :config="config" style="width:95%;height: calc(100% - 70px)"/>
     </div>
   </dv-border-box-12>
 

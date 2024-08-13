@@ -4,7 +4,7 @@
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px">
       <div class="module-title" style="margin-bottom: 10px">环境数据</div>
       <div
-        style="width: 100%;display: flex;justify-content: center;padding:0 10px;align-items: center;box-sizing: border-box;flex-wrap: wrap;align-content: center;row-gap: 10px;column-gap: 5px;flex-direction: column;height: 100%;overflow: hidden;padding-bottom: 20px">
+        style="width: 100%;display: flex;justify-content: flex-start;padding:0 10px;align-items: flex-start;box-sizing: border-box;flex-wrap: wrap;align-content: center;row-gap: 10px;column-gap: 5px;flex-direction: column;height: 100%;overflow: hidden;">
         <dv-border-box-13 class="text-box item">
           <dv-digital-flop :config="config1" class="num"/>
           <div class="text-box-desc">温度</div>
@@ -82,7 +82,7 @@ export default {
 
 <style lang="less" scoped>
 .item {
-  width: 7vw;
+  width: 12vw;
   height: 6vw;
 
 }

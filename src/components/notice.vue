@@ -3,7 +3,7 @@
     <div class="box-bg-blue"
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px">
       <div class="module-title" style="margin-bottom: 10px">消息公告</div>
-      <dv-scroll-board :config="config" style="width:90%;height:80%"/>
+      <dv-scroll-board :config="config" style="width:90%;height:calc(100% - 80px)"/>
     </div>
   </dv-border-box-12>
 
@@ -11,7 +11,13 @@
 
 <script>
 export default {
-  name: 'A4',
+  name: 'Notice',
+  props: {
+    rowNum: {
+      type: Number,
+      default: 5
+    }
+  },
   data() {
     return {
       config: {
@@ -31,6 +37,7 @@ export default {
           ['消息公告12']
 
         ],
+        rowNum: 5,
         index: true,
         columnWidth: [50],
         align: ['center']
@@ -38,7 +45,7 @@ export default {
     }
   },
   created() {
-
+    this.config.rowNum = this.rowNum
   }
 }
 </script>

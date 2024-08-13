@@ -1,9 +1,9 @@
 <template>
-  <dv-border-box-12>
+  <dv-border-box-12 class="box-bg-blue">
     <div class=""
-         style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px">
-      <div class="module-title" style="margin-bottom: 10px">车辆到场、发货信息</div>
-      <dv-scroll-board :config="config" style="width:95%;height:calc(100% - 100px)"/>
+         style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px;">
+      <div class="module-title-sm">车辆到场、发货信息</div>
+      <dv-scroll-board :config="config" style="width:calc(100% - 10px);height:calc(100% - 60px)"/>
     </div>
   </dv-border-box-12>
 
@@ -35,7 +35,7 @@ export default {
         ],
         index: true,
         align: ['center'],
-        rowNum: 5
+        rowNum: 4
       }
     }
   },

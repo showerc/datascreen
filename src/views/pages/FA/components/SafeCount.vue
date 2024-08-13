@@ -1,18 +1,18 @@
 <template>
-  <dv-border-box-12 style="display:flex;" class="box-bg-blue">
-    <div style="height:100%;display: flex;align-items: center;justify-content: center;align-content: center">
-      <div style="color:#00c0ff;font-weight: bold;font-size: 24px">车间连续安全生产</div>
+  <dv-border-box-2 :color="['#234d84','#031694']">
+    <div style="padding:20px;display: flex;align-items: center;justify-content: space-between">
+      <div>
+        <div style="font-weight: bold;font-size: 24px">车间连续安全生产</div>
+        <dv-decoration-3 style="width:200px;height:20px;"/>
+        <div style="font-size: 14px;color: #00c0ff;font-weight: bold;">2023年8月1日 - 2024年8月1日</div>
 
-      <dv-water-level-pond :config="{
-        data: [45],
-        shape: 'round',
-        waveHeight: 25,
-        waveNum: 2,
-        formatter:`{value}天`
-      }"
-                           style="width:80px;height:80px"/>
+      </div>
+      <div style="display: flex;position: absolute;right:20px;top:50%;transform: translate(0,-50%)">
+        <dv-decoration-9 style="width:80px;height:80px;color: #00c0ff;font-weight: bold">366天</dv-decoration-9>
+
+      </div>
     </div>
-  </dv-border-box-12>
+  </dv-border-box-2>
 
 </template>
 

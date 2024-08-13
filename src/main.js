@@ -7,7 +7,7 @@ import dataV from '@jiaminghi/data-view'
 import { changeDefaultConfig } from '@jiaminghi/charts'
 import borderBox14 from '@/components/datav/borderBox14'
 
-changeDefaultConfig('color', ['#8378ea', '#9fe6b8', '#ffdb5c', '#ff9f7f', '#fb7293', '#e062ae', '#cda819', '#e690d1'])
+changeDefaultConfig('color', ['#8378ea', '#9fe6b8', '#ffdb5c', '#ff9f7f', '#fb7293', '#e062ae', '#cda819', '#e690d1', '#e7bcf3', '#9d96f5', '#8378ea', '#96bfff'])
 changeDefaultConfig('xAxis', {
   axisLabel: {
     style: {

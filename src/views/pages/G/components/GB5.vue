@@ -1,11 +1,11 @@
 <template>
-  <dv-border-box-8 :dur="4" class="box-bg-blue">
+  <dv-border-box-12 :dur="4" class="box-bg-blue">
     <div
       style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px">
       <div class="module-title" style="margin-bottom: 10px">关键设备故障停机统计</div>
       <dv-scroll-board :wait-time="4000" :config="config" style="width:95%;height:calc(100% - 100px)"/>
     </div>
-  </dv-border-box-8>
+  </dv-border-box-12>
 
 </template>
 
@@ -15,7 +15,7 @@ export default {
   data() {
     return {
 
-      nameArr: ['设备1', '设备2', '设备3', '设备4', '设备5', '设备6', '设备7', '设备8'],
+      nameArr: ['设备1', '设备2', '设备3', '设备4', '设备5', '设备6', '设备7', '设备8', '设备9'],
       titleIndex: 0,
       config: {
         header: ['设备类型', '数量', '26日', '27日', '28日', '29日'],
@@ -23,8 +23,7 @@ export default {
         index: true,
         columnWidth: [50, 140, 80, 80, 80, 80, 80],
         align: ['center', 'center', 'center'],
-        rowNum: 8,
-        carousel: 'page'
+        rowNum: 8
       }
     }
   },

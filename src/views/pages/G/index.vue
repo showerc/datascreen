@@ -1,7 +1,7 @@
 <template>
   <div id="data-view" @click="$router.push('/')">
     <dv-full-screen-container>
-      <dv-border-box-14 title="新疆项⽬部T4 精益运营管理看板">
+      <dv-border-box-14 title="新疆项⽬部T4 精益运营管理看板" :title-width="1800" :font-size="30">
         <div
           style="height:100%;display: flex;flex-direction: column;overflow: hidden;box-sizing: border-box;padding: 10px;padding-top:60px">
 
@@ -22,14 +22,14 @@
               <GB1/>
 
             </div>
-            <div style="overflow: hidden;grid-column: 5 / span 4;grid-row: 4 / span 2;">
+            <div style="overflow: hidden;grid-column: 5 / span 8;grid-row: 4 / span 2;">
               <GB2/>
 
             </div>
-            <div style="overflow: hidden;grid-column: 9 / span 4;grid-row: 4 / span 2;">
-              <GB3/>
+            <!--            <div style="overflow: hidden;grid-column: 9 / span 4;grid-row: 4 / span 2;">-->
+            <!--              <GB3/>-->
 
-            </div>
+            <!--            </div>-->
             <div style="overflow: hidden;grid-column: 5 / span 4;grid-row: 6 / span 4;">
               <GB4/>
 
@@ -38,10 +38,10 @@
               <GB5/>
 
             </div>
-            <div style="overflow: hidden;grid-column: 13 / span 4;grid-row: 1 / span 5;">
-              <GC1/>
+            <div style="overflow: hidden;grid-column: 13 / span 4;grid-row: 1 / span 6;">
+              <GC1 :type="2"/>
             </div>
-            <div style="overflow: hidden;grid-column: 13 / span 4;grid-row: 6 / span 4;">
+            <div style="overflow: hidden;grid-column: 13 / span 4;grid-row: 7 / span 3;">
               <GC2/>
             </div>
           </div>
@@ -62,9 +62,11 @@ import GB1 from '@/views/pages/G/components/GB1.vue'
 import GB2 from '@/views/pages/G/components/GB2.vue'
 import GB3 from '@/views/pages/G/components/GB3.vue'
 import GB4 from '@/views/pages/G/components/GB4.vue'
-import GB5 from '@/components/notice.vue'
+import GB5 from '@/views/pages/G/components/GB5.vue'
+
+import GC2 from '@/components/notice.vue'
 import GC1 from '@/views/pages/G/components/GC1.vue'
-import GC2 from '@/views/pages/G/components/GC2.vue'
+// import GC2 from '@/views/pages/G/components/GB4.vue'
 
 import SafeCount from '@/views/pages/FA/components/SafeCount.vue'
 

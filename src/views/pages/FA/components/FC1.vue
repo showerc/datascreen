@@ -103,7 +103,8 @@ export default {
           type: 'line',
           data: [],
           label: {
-            show: true
+            show: true,
+            offset: [0, -10]
           },
           smooth: true,
           lineArea: {
@@ -123,7 +124,8 @@ export default {
           type: 'line',
           data: [],
           label: {
-            show: true
+            show: true,
+            offset: [0, 10]
           },
           yAxisIndex: 1
         }

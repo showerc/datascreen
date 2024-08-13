@@ -3,7 +3,7 @@
     <div class="box-bg-blue"
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px">
       <div class="module-title" style="margin-bottom: 10px">预制件状态</div>
-      <dv-scroll-board :config="config" style="width:95%;height:70%"/>
+      <dv-scroll-board :config="config" style="width:95%;height:calc(100% - 80px)"/>
     </div>
   </dv-border-box-12>
 
