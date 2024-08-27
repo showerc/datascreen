@@ -7,8 +7,10 @@
         <div class="module-title">预制件合格数量</div>
         <dv-decoration-3 style="width:200px;height:20px;"/>
       </div>
+      <dv-scroll-ranking-board :config="config" style="width: calc(100% - 80px);height:calc(100% - 100px)"/>
+      <!--      <dv-capsule-chart :config="config" style="width:calc(100% - 100px);height:calc(100% - 120px)"/>-->
 
-      <dv-conical-column-chart :config="config" style="width:90%;height:80%;margin-bottom: 20px"/>
+      <!--      <dv-conical-column-chart :config="config" style="width:90%;height:80%;margin-bottom: 20px"/>-->
       <dv-decoration-2 :reverse="true" style="width:10px;height:90%;position: absolute;top:5%;left:20px"/>
 
     </div>
@@ -22,54 +24,38 @@ export default {
   data() {
     return {
       config: {
+        rowNum: 6,
         showValue: true,
         fontSize: 16,
         data: [
           {
-            name: '预制叶根 PS',
+            name: '预制叶根',
             value: 55
           },
           {
-            name: '预制叶根 SS',
+            name: '预制UD',
             value: 120
           },
           {
-            name: '预制UD PS',
+            name: '主梁帽拉挤板',
             value: 56
           },
           {
-            name: '预制UD SS',
+            name: '辅梁帽拉挤板',
             value: 88
           },
           {
-            name: '主梁帽垃圾版 PS',
+            name: '腹板SW1',
             value: 64
           },
           {
-            name: '主梁帽垃圾版 SS',
-            value: 31
+            name: '腹板SW2',
+            value: 55
           },
           {
-            name: '辅梁帽垃圾版 PS',
-            value: 46
-          },
-          {
-            name: '辅梁帽垃圾版 SS',
-            value: 89
-          },
-          {
-            name: '腹板 SW1',
-            value: 76
-          },
-          {
-            name: '腹板 SW2',
-            value: 51
-          },
-          {
-            name: '腹板 SW3',
+            name: '腹板SW3',
             value: 65
           }
-
         ]
       }
 

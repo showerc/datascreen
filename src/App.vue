@@ -29,6 +29,27 @@ export default {
   background: rgba(6, 30, 93, .5)
 }
 
+.box-white {
+  padding: 0 5px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+  align-content: center;
+  background: #fff;
+  box-shadow: inset 0 0 10px 5px rgba(0, 123, 254, 0.5);
+
+  .module-title {
+    color: #000;
+    text-align: left;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -55,7 +76,7 @@ export default {
   .main-container {
     display: grid;
 
-    gap: 10px; /* 设置网格项之间的间距 */
+    gap: 12px; /* 设置网格项之间的间距 */
     width: 100%; /* 设置容器的宽度 */
     height: auto;
     flex: 1; /* 设置容器的高度 */
@@ -64,6 +85,8 @@ export default {
 }
 
 .module-title {
+  width: 100%;
+  text-align: center;
   font-size: 20px;
   color: #fff;
   font-weight: bold;
@@ -72,6 +95,7 @@ export default {
 }
 
 .module-title-sm {
+  text-align: center;
   font-size: 16px;
   color: #fff;
   font-weight: bold;
@@ -95,17 +119,20 @@ export default {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    flex-direction: column;
   }
 
   .text-box-title {
   }
 
   .text-box-desc {
-    font-size: 16px;
+    font-size: 18px;
     color: #999;
-    line-height: 20px;
+    line-height: 16px;
   }
+}
+
+.dv-scroll-board .rows .ceil {
+  position: relative;
 }
 
 </style>

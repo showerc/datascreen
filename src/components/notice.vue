@@ -1,9 +1,26 @@
 <template>
-  <dv-border-box-12>
-    <div class="box-bg-blue"
-         style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px">
-      <div class="module-title" style="margin-bottom: 10px">消息公告</div>
-      <dv-scroll-board :config="config" style="width:90%;height:calc(100% - 80px)"/>
+  <dv-border-box-12 class="box-bg-blue">
+    <div
+      style="height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: stretch;position: relative;gap: 10px;padding: 0 20px;">
+      <div class="module-title" style="margin-bottom: 10px;text-align: center">消息公告</div>
+      <div style="display: flex;gap:20px;justify-content: space-between">
+
+        <dv-border-box-2 :color="['#8360c3','#2ebf91']" class="text-box item">
+          <div class="text-box-desc">温度</div>
+
+          <dv-digital-flop :config="config1"
+                           class="num"
+          />
+        </dv-border-box-2>
+        <dv-border-box-2 :color="['#8360c3','#2ebf91']" class="text-box item">
+          <div class="text-box-desc">湿度</div>
+
+          <dv-digital-flop :config="config2" class="num"/>
+        </dv-border-box-2>
+      </div>
+      <dv-scroll-board :config="config" style="height:calc(100% - 150px)"/>
+      <!--      <dv-decoration-2 :reverse="true" style="width:10px;height:90%;position: absolute;top:5%;left:20px"/>-->
+
     </div>
   </dv-border-box-12>
 
@@ -15,26 +32,33 @@ export default {
   props: {
     rowNum: {
       type: Number,
-      default: 5
+      default: 4
     }
   },
   data() {
     return {
+      config1: {
+        number: [25],
+        content: '{nt}℃',
+        style: { fontSize: 22 }
+      },
+      config2: {
+        number: [67],
+        content: '{nt}RH',
+        style: { fontSize: 22 }
+
+      },
       config: {
         header: [],
         data: [
-          ['消息公告1'],
-          ['消息公告2'],
-          ['消息公告3'],
-          ['消息公告4'],
-          ['消息公告5'],
-          ['消息公告6'],
-          ['消息公告7'],
-          ['消息公告8'],
-          ['消息公告9'],
-          ['消息公告10'],
-          ['消息公告11'],
-          ['消息公告12']
+          ['A1011工艺文件1已下发'],
+          ['A1011操作流程1已发下'],
+          ['A1011工艺文件2已下发'],
+          ['A1012操作流程2已发下'],
+          ['A1011工艺文件3已下发'],
+          ['A1011操作流程4已发下'],
+          ['A1011工艺文件5已下发'],
+          ['A1012操作流程6已发下']
 
         ],
         rowNum: 5,
@@ -51,5 +75,12 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.item {
+  padding: 10px;
+  align-items: baseline;
+}
 
+.num {
+  height: 2vw
+}
 </style>

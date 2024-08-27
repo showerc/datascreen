@@ -5,7 +5,7 @@
          align-items: center;">
       <div class="module-title">成本</div>
 
-      <dv-charts :option="option" style="width:90%;"/>
+      <dv-charts :option="option" style="width:calc(100% - 40px);height:calc(100% - 40px)"/>
       <dv-decoration-2 style="width:80%;height:50px;position: absolute;bottom:0px;left:10%"/>
 
     </div>
@@ -19,9 +19,8 @@ export default {
   data() {
     return {
       option: {
-        color: ['#ff9f7f', '#96bfff', '#ffdb5c'],
         legend: {
-          data: ['标准用量', '实际用量'],
+          data: ['标准用量', 'A1101用量'],
           textStyle: {
             fontSize: 14,
             fill: '#FFF'
@@ -33,24 +32,19 @@ export default {
         },
         xAxis: {
           name: '',
-          data: 'value',
+          data: ['灌注树脂', '手糊树脂', '修补树脂', '粘结剂'],
           axisLabel: {
             style: {
               fill: '#FFF'
             }
-          },
-          splitNumber: 4
+          }
         },
         yAxis: {
           name: '',
-          data: ['灌注树脂', '手糊树脂', '修补树脂', '粘结剂'],
+          data: 'value',
           axisLabel: {
             style: {
-              fill: '#FFF',
-              rotate: 90,
-              textAlign: 'center',
-              fontSize: 16
-
+              fill: '#FFF'
             }
           }
 
@@ -59,16 +53,53 @@ export default {
           {
             name: '标准用量',
             data: [1300, 1900, 1800, 2000],
-            type: 'bar',
-            shapeType: 'leftEchelon'
+            type: 'line',
+            label: {
+              show: true,
+              style: {
+                fill: '#EA5455'
+              }
+            },
+            lineArea: {
+              show: true,
+              gradient: ['#FEB692', '#EA5455']
+            },
+            lineStyle: {
+              stroke: '#EA5455',
+              lineWidth: 1
+            },
+            linePoint: {
+              radius: 4,
+              style: {
+                stroke: '#EA5455'
+
+              }
+            }
           },
           {
-            name: '实际用量',
+            name: 'A1101用量',
             data: [1200, 2000, 1900, 2100],
             type: 'bar',
-            shapeType: 'rightEchelon'
-
+            gradient: {
+              color: ['#90F7EC', '#32CCBC']
+            },
+            label: {
+              show: true
+            }
           }
+
+          // {
+          //   name: 'A1102用量',
+          //   data: [1100, 1800, 1800, 2000],
+          //   type: 'bar',
+          //   gradient: {
+          //     color: ['#81FBB8', '#28C76F']
+          //   },
+          //   label: {
+          //     show: true
+          //   }
+          // }
+
         ]
       }
 

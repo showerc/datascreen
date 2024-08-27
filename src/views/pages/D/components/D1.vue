@@ -1,13 +1,13 @@
 <template>
-  <dv-border-box-12>
-    <div class="box-bg-blue"
-         style="width:100%;height:100%;overflow: hidden;flex-direction: column;align-items: center;display: flex;justify-content: space-between;position: relative;">
+  <dv-border-box-8 class="box-bg-blue">
+    <div
+      style="width:100%;height:100%;overflow: hidden;flex-direction: column;align-items: flex-start;display: flex;justify-content: flex-start;position: relative;">
       <div class="module-title">B1030D树脂用量</div>
 
-      <dv-charts :option="option" style="width:90%;"/>
+      <dv-charts :option="option" style="width:calc(100% - 50px);height:calc(100% - 70px)"/>
 
     </div>
-  </dv-border-box-12>
+  </dv-border-box-8>
 
 </template>
 
@@ -22,8 +22,8 @@ export default {
           textStyle: {
             fill: '#FFF'
           },
-          orient: 'vertical',
-          right: '100%'
+          bottom: 20,
+          orient: 'horizontal'
         },
         grid: {
           top: '12px'

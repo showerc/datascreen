@@ -6,97 +6,73 @@ Vue.use(Router)
 export const routes = [
   {
     path: '/',
-    component: () => import('@/views/pages/A/index.vue'),
+    redirect: '/a',
     hidden: true
   },
   {
     path: '/a',
+    name: 'A',
     component: () => import('@/views/pages/A/index.vue'),
     hidden: true
   },
   {
-    path: '/b',
-    component: () => import('@/views/pages/B/index.vue'),
+    path: '/ba',
+    name: 'BA',
+    component: () => import('@/views/pages/BA/index.vue'),
     hidden: true
   },
   {
-    path: '/c',
-    component: () => import('@/views/pages/C/index.vue'),
+    path: '/bb',
+    name: 'BB',
+    component: () => import('@/views/pages/BB/index.vue'),
     hidden: true
   },
   {
-    path: '/c1',
-    component: () => import('@/views/pages/C1/index.vue'),
+    path: '/ca',
+    name: 'CA',
+    component: () => import('@/views/pages/CA/index.vue'),
+    hidden: true
+  },
+  {
+    path: '/cb',
+    name: 'CB',
+    component: () => import('@/views/pages/CB/index.vue'),
     hidden: true
   },
   {
     path: '/d',
+    name: 'D',
     component: () => import('@/views/pages/D/index.vue'),
     hidden: true
   },
   {
     path: '/e',
+    name: 'E',
     component: () => import('@/views/pages/E/index.vue'),
     hidden: true
   },
   {
+    path: '/f',
+    name: 'F',
+    component: () => import('@/views/pages/F/index.vue'),
+    hidden: true
+  },
+  {
     path: '/fa',
+    name: 'FA',
     component: () => import('@/views/pages/FA/index.vue'),
     hidden: true
   },
   {
-    path: '/fb',
-    component: () => import('@/views/pages/FB/index.vue'),
-    hidden: true
-  },
-  {
-    path: '/fc',
-    component: () => import('@/views/pages/FC/index.vue'),
-    hidden: true
-  },
-  {
-    path: '/fd',
-    component: () => import('@/views/pages/FD/index.vue'),
-    hidden: true
-  },
-  {
-    path: '/fe',
-    component: () => import('@/views/pages/FE/index.vue'),
-    hidden: true
-  },
-  {
-    path: '/ff',
-    component: () => import('@/views/pages/FF/index.vue'),
-    hidden: true
-  },
-  {
-    path: '/fg',
-    component: () => import('@/views/pages/FG/index.vue'),
-    hidden: true
-  },
-  {
-    path: '/fh',
-    component: () => import('@/views/pages/FH/index.vue'),
-    hidden: true
-  },
-  {
-    path: '/fi',
-    component: () => import('@/views/pages/FI/index.vue'),
-    hidden: true
-  },
-  {
-    path: '/fj',
-    component: () => import('@/views/pages/FJ/index.vue'),
-    hidden: true
-  },
-  {
-    path: '/fk',
-    component: () => import('@/views/pages/FK/index.vue'),
-    hidden: true
-  },
-  {
     path: '/g',
+    name: 'G',
     component: () => import('@/views/pages/G/index.vue'),
+    hidden: true
+  },
+  {
+    path: '/h',
+    name: 'H',
+    component: () => import('@/views/pages/H/index.vue'),
     hidden: true
   }
 ]

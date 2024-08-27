@@ -1,46 +1,37 @@
 <template>
-  <div id="data-view" @click="$router.push('/b')">
+  <div id="data-view">
     <dv-full-screen-container>
       <dv-border-box-14 title="模具工位">
         <div
           style="height:100%;display: flex;flex-direction: column;overflow: hidden;box-sizing: border-box;padding: 10px;padding-top:60px">
-          <!--          <div style="display: flex;justify-content: center;align-items: center;font-size:16px;gap:10px;padding:10px">-->
-          <!--            <div>-->
-          <!--              C1B1080D-->
-          <!--            </div>-->
-          <!--            <div class="tag">-->
-          <!--              <dv-border-box-8>-->
-          <!--                <div style="padding:5px 10px">铺层</div>-->
-          <!--              </dv-border-box-8>-->
-          <!--            </div>-->
-
-          <!--            <div class="tag ">灌注</div>-->
-          <!--            <div class="tag">合模</div>-->
-          <!--            <div class="tag">后固化</div>-->
-          <!--          </div>-->
 
           <div class="main-container">
 
-            <div style="overflow: hidden;grid-column: 1 / span 1;grid-row: 1 / span 3;">
-              <A1/>
+            <div style="overflow: hidden;grid-column: 1 / span 14;grid-row: 1 / span 3;">
+              <A8/>
             </div>
-            <div style="overflow: hidden;grid-column: 2 / span 6;grid-row: 4 / span 3;">
-              <A2/>
-            </div>
-            <div style="overflow: hidden;grid-column: 2 / span 1;grid-row: 1 / span 3;">
-              <A3/>
-            </div>
-            <div style="overflow: hidden;grid-column: 1 / span 1;grid-row: 4 / span 3;">
-              <A4/>
-            </div>
-            <div style="overflow: hidden;grid-column: 3 / span 1;grid-row: 1 / span 3;">
+            <div style="overflow: hidden;grid-column: 15 / span 14;grid-row: 1 / span 3;">
               <A5/>
             </div>
-            <div style="overflow: hidden;grid-column: 4 / span 1;grid-row: 1 / span 3;">
+            <div style="overflow: hidden;grid-column: 29 / span 14;grid-row: 1 / span 3;">
               <A6/>
             </div>
-            <div style="overflow: hidden;grid-column: 5 / span 2;grid-row: 1 / span 3;">
-              <A7 :row-num="6"/>
+            <div style="overflow: hidden;grid-column: 43 / span 14;grid-row: 1 / span 3;">
+
+              <A3/>
+            </div>
+            <div style="overflow: hidden;grid-column: 1 / span 8;grid-row: 4 / span 3;">
+              <A1/>
+            </div>
+            <div style="overflow: hidden;grid-column: 9 / span 16;grid-row: 4 / span 3;">
+              <A7/>
+            </div>
+            <div style="overflow: hidden;grid-column: 25 / span 16;grid-row: 4 / span 3;">
+              <A2/>
+            </div>
+
+            <div style="overflow: hidden;grid-column: 41 / span 16;grid-row: 4 / span 3;">
+              <Notice :row-num="4"/>
             </div>
           </div>
 
@@ -59,8 +50,9 @@ import A3 from '@/views/pages/A/components/A3.vue'
 
 import A5 from '@/views/pages/A/components/A5.vue'
 import A6 from '@/views/pages/A/components/A6.vue'
-import A4 from '@/components/environment.vue'
-import A7 from '@/components/notice.vue'
+import A7 from '@/views/pages/A/components/A7.vue'
+import Notice from '@/components/notice.vue'
+import A8 from '@/views/pages/A/components/A8.vue'
 
 export default {
   name: 'A',
@@ -68,26 +60,29 @@ export default {
     A1,
     A2,
     A3,
-    A4,
     A5,
     A6,
-    A7
+    A7,
+    A8,
+    Notice
   },
   data() {
     return {}
   },
-  methods: {
-    onTitleClick() {
-      console.log(1)
-    }
-  }
+  mounted() {
+    document.addEventListener('keyup', this.onKeyup)
+  },
+  beforeDestroy() {
+    document.removeEventListener('keyup', this.onKeyup)
+  },
+  methods: {}
 }
 </script>
 
 <style lang="less" scoped>
 
 .main-container {
-  grid-template-columns: repeat(6, 1fr); /* 定义三列，每列占1份空间 */
+  grid-template-columns: repeat(56, 1fr); /* 定义三列，每列占1份空间 */
   grid-template-rows: repeat(6, 1fr); /* 定义两行，每行占1份空间 */
 }
 

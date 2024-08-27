@@ -1,9 +1,17 @@
 <template>
-  <dv-border-box-12 class="box-bg-blue">
-    <div class=""
+  <dv-border-box-12>
+    <div class="box-bg-blue"
          style="width:100%;height:100%;overflow: hidden;display: flex;flex-direction: column;align-items: center;position: relative;gap: 10px">
-      <div class="module-title" style="margin-bottom: 10px">{{ title }}</div>
-      <img src="@/assets/img/1.gif" style="width:90%"/>
+      <div
+        style="flex:1;display: flex;justify-content: space-around;align-items: center;padding-bottom: 10px;gap:2vh;width:100%;">
+
+        <div v-for="i in 7"
+             style="display: flex;justify-content: center;align-items: center;flex-direction: column;width:100%">
+          <dv-decoration-11 style="width:100%;height:50px;margin-bottom: 10px">文件标题{{ i }}</dv-decoration-11>
+          <img src="@/assets/img/qrcode.png" style="width:9vw;object-fit: cover">
+        </div>
+
+      </div>
     </div>
   </dv-border-box-12>
 
@@ -11,57 +19,47 @@
 
 <script>
 export default {
-  name: 'A4',
-  props: {
-    title: {
-      type: String,
-      default: ''
-    }
-  },
+  name: 'A1',
   data() {
     return {
-      config: {
-        header: [],
-        data: [
-          ['消息公告1'],
-          ['消息公告2'],
-          ['消息公告3'],
-          ['消息公告4'],
-          ['消息公告5'],
-          ['消息公告6'],
-          ['消息公告7'],
-          ['消息公告8'],
-          ['消息公告9'],
-          ['消息公告10'],
-          ['消息公告11'],
-          ['消息公告12']
+      option: {
+        // title: {
+        //   text: '质量情况',
+        //   style: {
+        //     fill: '#fff',
+        //     fontSize: 20
+        //   }
+        // },
 
-        ],
-        index: true,
-        columnWidth: [50],
-        align: ['center']
+        series: [
+          {
+            type: 'pie',
+            data: [
+              { name: '半干沙', value: 15 },
+              { name: '褶皱', value: 13 },
+              { name: '芯材间隙', value: 11 },
+              { name: '芯材台阶', value: 7 },
+              { name: '灌注气泡', value: 6 }
+            ],
+            insideLabel: {
+              show: true
+            },
+            outsideLabel: {
+              show: true,
+              formatter: '{name} - {value}'
+            }
+          }
+        ]
+
       }
     }
-  },
-  created() {
-    setInterval(() => {
-      this.config3 = {
-        number: [40 + Math.floor(Math.random() * 10)],
-        content: '{nt}DB'
-      }
-      this.config4 = {
-        number: [80 + Math.floor(Math.random() * 5)],
-        content: '{nt}LX'
-      }
-      this.config5 = {
-        number: [390 + Math.floor(Math.random() * 30)],
-        content: '{nt}粒/升'
-      }
-    }, 2000)
   }
 }
 </script>
 
 <style lang="less" scoped>
-
+.item {
+  width: 10vw;
+  height: 4vh;
+}
 </style>
